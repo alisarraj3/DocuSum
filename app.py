@@ -15,7 +15,7 @@ class UploadFileForm(FlaskForm):
 
 
 @app.route('/', methods=['GET', 'POST'])
-@app.route("/home") # Home page
+@app.route("/home", methods=['GET', 'POST']) # Home page
 def home():
     form = UploadFileForm()
     if form.validate_on_submit():
