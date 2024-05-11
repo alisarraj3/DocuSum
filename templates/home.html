@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<style>
+    p {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: x-large;
+        margin: 40pt;
+        margin-bottom: -30pt;
+    }
+   
+    a {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin: 40pt;
+    }
+
+    form {
+        margin: 40pt;
+        margin-bottom: 0pt;
+    }
+   
+</style>
+
+<p>Submit Document</p>
+    
+
+<form method='POST' enctype="multipart/form-data">
+    <style>
+        p1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        p2 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            
+        }
+    </style>
+    <p1><input type=file name=file required="required"></p1>
+    <p2><input type=submit value=Upload></p2>
+
+</form>
+    
+<a href="{{ url_for('complete') }}"> Click to complete </a> 
+
+{% endblock %}
