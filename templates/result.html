@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Result</title>
+{% endblock %}
+
+{% block body %}
+    <style>
+        h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: x-large;
+            margin: 40pt;
+            margin-bottom: -30pt;
+        }
+        p {
+            margin: 12%;
+            margin-bottom: -10%;
+        }
+        a {
+            margin-bottom: 95%;
+        }
+    </style>
+
+    <h1>Document Summary</h1>
+    <p>{{ summary }}</p>
+
+    <a href="{{ url_for('home')}}" >Submit another</a>
+
+{% endblock %}

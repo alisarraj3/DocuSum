@@ -7,9 +7,10 @@
 <style>
     p {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: x-large;
+        font-size:xx-large;
         margin: 40pt;
-        margin-bottom: -30pt;
+        margin-left: 35%;
+        margin-bottom: 50pt;
     }
    
     a {
@@ -21,16 +22,27 @@
         margin: 40pt;
         margin-bottom: 0pt;
     }
+
+    t1 {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size:x-large;
+        margin: 40pt;
+        margin-left: 37%;
+        margin-bottom: 50pt;
+    }
    
 </style>
 
 <p>Submit Document</p>
+
+<t1>Only PDF format</t1>
     
 
 <form method='POST' enctype="multipart/form-data">
     <style>
         p1 {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin-left: 30%;
         }
         p2 {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -41,7 +53,5 @@
     <p2><input type=submit value=Upload></p2>
 
 </form>
-    
-<a href="{{ url_for('complete') }}"> Click to complete </a> 
 
 {% endblock %}
