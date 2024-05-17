@@ -12,6 +12,8 @@ app.add_url_rule(
     "/uploads/<name>", endpoint="download_file", build_only=True
 )
 
+FILENAME = ""
+
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -33,6 +35,13 @@ def home():
             return redirect(request.url)
         
         if file and allowed_file(file.filename):
+            # Saving File
+            fn = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], fn))
+            FILENAME = fn
+
+
+            # Performing NLP
             fs = nlp.FileSum(file)
             summary = fs.createSummary()
             return render_template('result.html', summary=summary)
@@ -41,11 +50,9 @@ def home():
 
 
 
-
-
-
-
-
+@app.route("/view_file")
+def view_file():
+    return redirect(url_for('uploaded_file', filename=FILENAME))
 
 @app.route('/uploads/<name>')
 def download_file(name):
